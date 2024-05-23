@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PRM392Assignment</string>
+    <string name="login">Login</string>
+    <string name="signup">Sign up</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="loginNow">Have an account? Sign in now</string>
+    <string name="registerNow">Don\'t have an account? Register now</string>
+    <string name="logout">Logout\n</string>
+    <string name="shut_down_app">Shut down app</string>
+</resources>

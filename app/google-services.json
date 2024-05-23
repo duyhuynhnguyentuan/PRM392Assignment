@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1066194149059",
+    "project_id": "assignmentprm391",
+    "storage_bucket": "assignmentprm391.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066194149059:android:60047d51788067fc9e4c76",
+        "android_client_info": {
+          "package_name": "com.example.prm392assignment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJHxVgrGrAUx-kBsGnKpbQKrjtX6m9cA0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
