@@ -7,32 +7,55 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center|top"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <TextView
         android:id="@+id/user_details"
-        android:textSize="30dp"
-        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animationView"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        app:lottie_url="https://lottie.host/beabf3c0-c840-4f81-9ebb-991115d8002e/NdgZ7qBYYd.json"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"/>
 
-    <Button
-        android:id="@+id/logout_btn"
+        android:text="Hello World!"
+        android:textSize="20dp"
+        android:textStyle="italic" />
+
+<!--    <com.airbnb.lottie.LottieAnimationView-->
+<!--        android:id="@+id/animationView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="250dp"-->
+<!--        app:lottie_url="https://lottie.host/beabf3c0-c840-4f81-9ebb-991115d8002e/NdgZ7qBYYd.json"-->
+<!--        app:lottie_autoPlay="true"-->
+<!--        app:lottie_loop="true"/>-->
+    <TextView
+        android:textSize="30dp"
+        android:fontFamily="cursive"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/logout" />
-    <Button
-        android:id="@+id/shut_down"
-        android:backgroundTint="#B70909"
-        android:text="@string/shut_down_app"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="Products"
+        android:textStyle="bold"/>
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/loading_animation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/loading_animation"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+<!--    <Button-->
+<!--        android:id="@+id/logout_btn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/logout" />-->
+<!--    <Button-->
+<!--        android:id="@+id/shut_down"-->
+<!--        android:backgroundTint="#B70909"-->
+<!--        android:text="@string/shut_down_app"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"/>-->
 </LinearLayout>
