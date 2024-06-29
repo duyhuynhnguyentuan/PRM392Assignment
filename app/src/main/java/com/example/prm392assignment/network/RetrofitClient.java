@@ -7,7 +7,7 @@ public class RetrofitClient {
 
     private static RetrofitClient instance = null;
     private ApiService apiService;
-    private static final String BASE_URL = "https://fakestoreapi.com/";
+    private static final String BASE_URL = "https://nodejs-ecommerce-api-prm.onrender.com/";
 
     private RetrofitClient() {
         Retrofit retrofit = new Retrofit.Builder()

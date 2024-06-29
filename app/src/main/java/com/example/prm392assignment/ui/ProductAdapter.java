@@ -1,6 +1,5 @@
 package com.example.prm392assignment.ui;
 
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,9 +9,23 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.prm392assignment.R;
 import com.example.prm392assignment.model.Product;
 import com.squareup.picasso.Picasso;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
+import java.util.Currency;
 import java.util.List;
+import java.util.Locale;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder> {
+    Locale locale = new Locale("vi", "VN");
+    Currency currency = Currency.getInstance("VND");
+    DecimalFormatSymbols df = DecimalFormatSymbols.getInstance(locale);
+    NumberFormat numberFormat = NumberFormat.getCurrencyInstance(locale);
+
+    {
+        df.setCurrency(currency);
+        numberFormat.setCurrency(currency);
+    }
+
     private Context context;
     private List<Product> productList;
 
@@ -31,11 +44,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         Product product = productList.get(position);
-        holder.titleTextView.setText(product.getTitle());
-        holder.priceTextView.setText("$" + product.getPrice());
-        holder.ratingTextView.setText(""+ product.getRating().getRate());
-        holder.ratingCountTextView.setText("(" + product.getRating().getCount() + ")");
-        Picasso.get().load(product.getImage()).into(holder.imageView);
+        holder.titleTextView.setText(product.getName());
+        holder.priceTextView.setText(numberFormat.format(product.getPrice()));
+        holder.categoryTextView.setText(product.getCategory().getName());
+        Picasso.get().load(product.getProductImage()).into(holder.imageView);
     }
 
     @Override
@@ -43,4 +55,3 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder> {
         return productList.size();
     }
 }
-

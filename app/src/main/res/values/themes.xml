@@ -1,11 +1,22 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.PRM392Assignment" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.PRM392Assignment" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Primary brand color. -->
+        <!-- Customize your theme here. -->
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/CustomActivityAnimation</item>
     </style>
-
+    <style name="CustomActivityAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>
+    </style>
     <style name="Theme.PRM392Assignment" parent="Base.Theme.PRM392Assignment" />
+
     <style name="BigLoginTextStyle">
         <item name="android:textColor">@color/white</item>
         <item name="android:gravity">center</item>
