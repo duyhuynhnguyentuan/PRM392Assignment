@@ -10,7 +10,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -19,13 +20,14 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="16dp"
                     android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
                     android:paddingHorizontal="16dp">
 
@@ -34,6 +36,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Welcome"
+                        android:textSize="15dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,7 +44,8 @@
                         android:id="@+id/welcomeName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Duy Huynh"
+                        android:text="username"
+                        android:textSize="20dp"
                         android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="@id/textView"
@@ -49,13 +53,263 @@
 
                     <androidx.appcompat.widget.AppCompatImageView
                         android:id="@+id/logoutBtn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
 
+                        android:background="@drawable/baseline_logout_24"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:background="@drawable/baseline_logout_24" />
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_margin="16dp"
+                    >
+
+                    <ImageView
+                        android:padding="12dp"
+                        android:id="@+id/filterBtn"
+                        android:layout_width="170dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+
+                        app:srcCompat="@drawable/baseline_display_settings_24"
+                        android:background="@drawable/grey_background"
+                        android:layout_marginEnd="12dp"
+
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/grey_background"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/editTextText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/grey_background"
+                            android:ems="10"
+                            android:inputType="text"
+                            android:padding="8dp"
+                            android:textSize="16sp"
+                            android:textAlignment="center"
+                            android:layout_margin="4dp"
+                            android:text=""
+                            android:hint="Search..."
+                            android:textColorHint="@color/lavender"/>
+
+                        <ImageView
+                            android:id="@+id/searchBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.5"
+                            app:srcCompat="@drawable/baseline_search_24" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/cartBtn"
+                        android:layout_marginStart="12dp"
+                        android:padding="12dp"
+                        android:layout_width="170dp"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/baseline_shopping_cart_24"
+                        android:background="@drawable/grey_background" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:weightSum="3"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:background="@drawable/grey_background"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp">
+
+                        <ImageView
+                            android:id="@+id/imageView1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/outline_location_on_24" />
+
+                        <TextView
+                            android:id="@+id/locationTextView"
+                            android:text="loading..."
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:background="@drawable/grey_background"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp">
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/baseline_access_time_24" />
+
+                        <TextView
+                            android:id="@+id/timeTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="15-30 min"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:background="@drawable/grey_background"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/baseline_attach_money_24" />
+
+                        <TextView
+                            android:id="@+id/moneyTextView"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="100-200"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_marginHorizontal="16dp">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Top sản phẩm bán chạy"
+                        android:textSize="22dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/viewListText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/red"
+
+                        android:text="View" />
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="350dp"
+                    >
+
+                    <ProgressBar
+                        android:id="@+id/progressBarBestProduct"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@id/bestProductView"
+                        app:layout_constraintEnd_toEndOf="@id/bestProductView"
+                        app:layout_constraintStart_toStartOf="@id/bestProductView"
+                        app:layout_constraintTop_toTopOf="@id/bestProductView"
+                        />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/bestProductView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="16dp"
+                    android:orientation="horizontal"
+                    tools:layout_editor_absoluteX="16dp">
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Danh mục"
+                        android:textSize="22dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View"
+
+                        android:textColor="@color/red" />
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ProgressBar
+                        android:id="@+id/progressBarCategory"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@id/CategoryView"
+                        app:layout_constraintEnd_toEndOf="@id/CategoryView"
+                        app:layout_constraintStart_toStartOf="@id/CategoryView"
+                        app:layout_constraintTop_toTopOf="@id/CategoryView" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/CategoryView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
         </ScrollView>
@@ -64,14 +318,14 @@
             android:id="@+id/bottomNavigation"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="30dp"
             android:background="@drawable/bottom_background"
             android:elevation="2dp"
             app:itemActiveIndicatorStyle="@color/lavender"
             app:itemIconSize="30dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="30dp"
-            android:layout_marginTop="30dp"
             app:itemIconTint="@drawable/item_selector"
             app:itemRippleColor="@android:color/transparent"
             app:labelVisibilityMode="unlabeled"

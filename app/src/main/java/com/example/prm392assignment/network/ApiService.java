@@ -4,6 +4,7 @@ import com.example.prm392assignment.model.GetDataResponse;
 import com.example.prm392assignment.model.LoginRequest;
 import com.example.prm392assignment.model.LoginResponse;
 import com.example.prm392assignment.model.Product;
+import com.example.prm392assignment.model.ProductResponse;
 import com.example.prm392assignment.model.User;
 import com.example.prm392assignment.model.UserResponse;
 
@@ -24,4 +25,8 @@ public interface ApiService {
 
     @GET("/user/data")
     Call<GetDataResponse> getDataResponse(@Header("auth-token") String authToken);
+
+    @GET("/product/show")
+    Call<ProductResponse> getProducts();
+
 }

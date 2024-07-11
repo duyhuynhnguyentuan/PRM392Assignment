@@ -10,6 +10,7 @@
     <color name="pink">#b709b5</color>
     <color name="purple">#5c08aa</color>
     <color name="red">#fb3b1e</color>
-    <color name="grey">#d2d2d2</color>
-    <color name="lavender">#8692F7</color>
+    <color name="grey">#f5f5f5</color>
+    <color name="lavender">#FB4570</color>
+    <color name="rosePink">#FB4570</color>
 </resources>

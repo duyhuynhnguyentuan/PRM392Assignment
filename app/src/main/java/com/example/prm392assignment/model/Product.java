@@ -1,6 +1,8 @@
 package com.example.prm392assignment.model;
 
 import android.os.Build;
+
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
@@ -9,7 +11,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Date;
 import java.util.Locale;
-public class Product {
+public class Product implements Serializable {
     private int quantity;
     private String name;
     private double price;

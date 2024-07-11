@@ -1,22 +1,36 @@
-package com.example.prm392assignment.ui;
+package com.example.prm392assignment.ui.adapter;
 
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.prm392assignment.R;
 import com.example.prm392assignment.model.Product;
+import com.example.prm392assignment.ui.DetailActivity;
+import com.example.prm392assignment.ui.viewholder.BestProductViewHolder;
 import com.squareup.picasso.Picasso;
+
 import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
 import java.util.Currency;
 import java.util.List;
 import java.util.Locale;
 
-public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder> {
+public class BestProductAdapter extends RecyclerView.Adapter<BestProductViewHolder> {
+    //truncate the title because it is long as f
+    private String truncateTitle(String title, int maxLength) {
+        if (title.length() > maxLength) {
+            return title.substring(0, maxLength) + "...";
+        } else {
+            return title;
+        }
+    }
+
     Locale locale = new Locale("vi", "VN");
     Currency currency = Currency.getInstance("VND");
     DecimalFormatSymbols df = DecimalFormatSymbols.getInstance(locale);
@@ -26,26 +40,26 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder> {
         df.setCurrency(currency);
         numberFormat.setCurrency(currency);
     }
-
     private Context context;
     private List<Product> productList;
 
-    public ProductAdapter(Context context, List<Product> productList) {
+    public BestProductAdapter(Context context, List<Product> productList) {
         this.context = context;
         this.productList = productList;
     }
 
     @NonNull
     @Override
-    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_product, parent, false);
-        return new ProductViewHolder(view);
+    public BestProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.best_product, parent, false);
+        return new BestProductViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull BestProductViewHolder holder, int position) {
         Product product = productList.get(position);
-        holder.titleTextView.setText(product.getName());
+        String truncatedTitle = truncateTitle(product.getName(), 20);
+        holder.titleTextView.setText(truncatedTitle);
         holder.priceTextView.setText(numberFormat.format(product.getPrice()));
         holder.categoryTextView.setText(product.getCategory().getName());
         Picasso.get().load(product.getProductImage()).into(holder.imageView);

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="260dp"
+    android:layout_height="300dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="3dp"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/bestProductImage"
+            android:layout_width="0dp"
+            android:layout_height="206dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bestProductImage">
+
+            <TextView
+                android:maxWidth="150dp"
+                android:id="@+id/bestProductName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Asus casi gdif gdfjhd hsjdh jhsdfjkhsdkfjh"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/bestProductCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="category"
+                app:layout_constraintTop_toBottomOf="@id/bestProductName"
+                app:layout_constraintStart_toStartOf="@id/bestProductName"
+                />
+            <TextView
+                android:id="@+id/bestProductPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20000000"
+                android:textStyle="italic"
+                android:textColor="@color/red"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintTop_toTopOf="@id/bestProductName"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
+            <TextView
+                android:id="@+id/BestProductPlusButton"
+                android:layout_width="44dp"
+                android:layout_height="39dp"
+                android:text="+"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:background="@drawable/plus_background"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
