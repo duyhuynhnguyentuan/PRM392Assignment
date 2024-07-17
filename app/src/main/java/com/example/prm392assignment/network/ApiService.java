@@ -3,10 +3,14 @@ package com.example.prm392assignment.network;
 import com.example.prm392assignment.model.GetDataResponse;
 import com.example.prm392assignment.model.LoginRequest;
 import com.example.prm392assignment.model.LoginResponse;
+import com.example.prm392assignment.model.PaymentRequest;
 import com.example.prm392assignment.model.Product;
 import com.example.prm392assignment.model.ProductResponse;
 import com.example.prm392assignment.model.User;
 import com.example.prm392assignment.model.UserResponse;
+import com.google.gson.JsonObject;
+
+import org.json.JSONObject;
 
 import java.util.List;
 
@@ -28,5 +32,8 @@ public interface ApiService {
 
     @GET("/product/show")
     Call<ProductResponse> getProducts();
+
+    @POST("/payment")
+    Call<JsonObject> fetchPayment(@Body PaymentRequest paymentRequest);
 
 }

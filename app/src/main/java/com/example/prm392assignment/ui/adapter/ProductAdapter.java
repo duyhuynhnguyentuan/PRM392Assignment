@@ -1,4 +1,4 @@
-package com.example.prm392assignment.ui;
+package com.example.prm392assignment.ui.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.prm392assignment.R;
 import com.example.prm392assignment.model.Product;
+import com.example.prm392assignment.ui.DetailActivity;
+import com.example.prm392assignment.ui.viewholder.ProductViewHolder;
 import com.squareup.picasso.Picasso;
 import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;

@@ -8,11 +8,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.example.prm392assignment.R;
+import com.example.prm392assignment.helper.ManagmentCart;
 import com.example.prm392assignment.model.Product;
 import com.squareup.picasso.Picasso;
 
@@ -22,6 +24,13 @@ import java.util.Currency;
 import java.util.Locale;
 
 public class DetailActivity extends AppCompatActivity {
+    private String truncateTitle(String title, int maxLength) {
+        if (title.length() > maxLength) {
+            return title.substring(0, maxLength) + "...";
+        } else {
+            return title;
+        }
+    }
     // Format Vietnam dong currency
     Locale locale = new Locale("vi", "VN");
     Currency currency = Currency.getInstance("VND");
@@ -41,7 +50,12 @@ public class DetailActivity extends AppCompatActivity {
     private TextView detailTotalPrice;
     private Product product;
     private TextView quantityNumber;
+    private TextView minusButton;
+    private TextView plusButton;
+    private AppCompatButton addBtn;
     private int num = 1;
+
+    private ManagmentCart managmentCart;
 
     // Get intent extra
     private void getIntentExtra() {
@@ -61,7 +75,27 @@ public class DetailActivity extends AppCompatActivity {
             detailTotalPrice.setText(numberFormat.format(num * product.getPrice()));
             quantityNumber.setText(String.valueOf(num));  // Convert int to String
         }
+        plusButton.setOnClickListener(v -> {
+            num = num + 1;
+            quantityNumber.setText(String.valueOf(num));
+            detailTotalPrice.setText(numberFormat.format(num * product.getPrice()));
+        });
+        minusButton.setOnClickListener(v -> {
+            if(num > 1){
+                num = num - 1;
+                quantityNumber.setText(String.valueOf(num));
+                detailTotalPrice.setText(numberFormat.format(num * product.getPrice()));
+            }
+
+        });
+        addBtn.setOnClickListener(v -> {
+            if (product != null) {
+                // Add the product to the cart with the specified quantity
+                managmentCart.insertProduct(product, num);
+            }
+        });
         backBtn.setOnClickListener(v -> finish());
+
     }
 
     @Override
@@ -86,6 +120,12 @@ public class DetailActivity extends AppCompatActivity {
         detailDescription = findViewById(R.id.detailDescription);
         detailTotalPrice = findViewById(R.id.detailTotalPrice);
         quantityNumber = findViewById(R.id.quantityNumber);
+        minusButton = findViewById(R.id.minusButton);
+        plusButton = findViewById(R.id.plusButton);
+        addBtn = findViewById(R.id.addBtn);
+
+        // Initialize ManagementCart
+        managmentCart = new ManagmentCart(this);
 
         // Apply window insets
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {

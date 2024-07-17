@@ -1,4 +1,4 @@
-package com.example.prm392assignment.ui;
+package com.example.prm392assignment.ui.viewholder;
 
 
 import android.view.View;

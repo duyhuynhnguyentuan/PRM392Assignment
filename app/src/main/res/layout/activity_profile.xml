@@ -4,17 +4,59 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MainActivity">
+    tools:context=".ui.MainActivity"
+    android:background="@color/white">
 
-    <TextView
+    <LinearLayout
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Profile"
-        android:textSize="36sp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/inline_circle_background"
+                android:padding="10dp"
+                app:srcCompat="@drawable/round_person_24"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:id="@+id/profileFullName"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Duy Huynh "
+                android:textStyle="bold"
+                android:textSize="25sp"/>
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/email"
+            android:layout_gravity="start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email: andyhntd2003@gmail.com "
+            android:layout_marginTop="16dp"
+            android:textSize="25sp"/>
+        <TextView
+            android:id="@+id/phone"
+            android:layout_gravity="start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email: andyhntd2003@gmail.com "
+            android:layout_marginTop="16dp"
+            android:textSize="25sp"/>
+    </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"

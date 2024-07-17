@@ -8,11 +8,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,6 +17,7 @@ import com.example.prm392assignment.model.Product;
 import com.example.prm392assignment.model.ProductResponse;
 import com.example.prm392assignment.network.ApiService;
 import com.example.prm392assignment.network.RetrofitClient;
+import com.example.prm392assignment.ui.adapter.ProductAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

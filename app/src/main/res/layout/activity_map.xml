@@ -6,15 +6,35 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Map"
-        android:textSize="36sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:gravity="top|center"
+        android:layout_marginHorizontal="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Địa chỉ cửa hàng"
+            android:textStyle="bold"
+            android:textColor="@color/lavender"
+            android:textSize="36sp" />
+        <fragment
+            android:id="@+id/id_map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="700dp"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/goToMap"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đi tới địa chỉ"
+            android:textColor="@color/white"
+            android:background="@drawable/red_button_background"/>
+    </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
