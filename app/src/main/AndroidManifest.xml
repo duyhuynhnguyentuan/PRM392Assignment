@@ -67,7 +67,7 @@
         </activity>
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCyqv0WT8Qjf3ZwtSXQFaAeaPkpPd9cvt4"
+            android:value="memay"
             />
     </application>
 
